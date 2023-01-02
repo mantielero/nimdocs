@@ -35,10 +35,11 @@ nav:
     - Special Types: manual/special_types.md
     - Modules: manual/modules.md
     - Compiler Messages: manual/compiler_messages.md
-    - Pragmas: manual/pragmas.md
-    - Implementation Specific Pragmas: manual/specific_pragmas.md
-    - User-defined pragmas: manual/user_defined_pragmas.md
-    - Foreign function interface: manual/ffi.md
+    - Pragmas:
+      - Pragmas: manual/pragmas/pragmas.md
+      - Implementation Specific Pragmas: manual/pragmas/specific_pragmas.md
+      - User-defined pragmas: manual/pragmas/user_defined_pragmas.md
+      - Foreign function interface: manual/pragmas/ffi.md
     - Threads: manual/threads.md
 
 
