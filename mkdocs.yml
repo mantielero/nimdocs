@@ -37,7 +37,29 @@ nav:
     - Modules: manual/modules.md
     - Compiler Messages: manual/compiler_messages.md
     - Pragmas:
-      - Pragmas: manual/pragmas/pragmas.md
+      - Pragmas: 
+        - Introduction: manual/pragmas/pragmas/pragmas.md
+        - depricated: manual/pragmas/pragmas/pragma_depricated.md
+        - compileTime: manual/pragmas/pragmas/pragma_compileTime.md 
+        - noReturn: manual/pragmas/pragmas/pragma_noreturn.md 
+        - acyclic: manual/pragmas/pragmas/pragma_acyclic.md          
+        - shallow: manual/pragmas/pragmas/pragma_shallow.md  
+        - pure: manual/pragmas/pragmas/pragma_fatal.md         
+        - asmNoStackFrame: manual/pragmas/pragmas/pragma_pure.md 
+        - fatal: manual/pragmas/pragmas/pragma_fatal.md 
+        - warning: manual/pragmas/pragmas/pragma_warning.md 
+        - hint: manual/pragmas/pragmas/pragma_hint.md         
+        - line: manual/pragmas/pragmas/pragma_line.md         
+        - linearScanEnd: manual/pragmas/pragmas/pragma_linearscanend.md  
+        - computedGoto: manual/pragmas/pragmas/pragma_computedgoto.md 
+        - immediate: manual/pragmas/pragmas/pragma_immediate.md 
+        - compilation option: manual/pragmas/pragmas/pragma_compilation_option.md 
+        - push / pop: manual/pragmas/pragmas/pragma_push_pop.md 
+        - register: manual/pragmas/pragmas/pragma_register.md          
+        - global: manual/pragmas/pragmas/pragma_global.md        
+        - used: manual/pragmas/pragmas/pragma_used.md
+        - experimental: manual/pragmas/pragmas/pragma_experimental.md
+
       - Implementation Specific Pragmas: manual/pragmas/specific_pragmas.md
       - User-defined pragmas: manual/pragmas/user_defined_pragmas.md
       - Foreign Function Interface: 
