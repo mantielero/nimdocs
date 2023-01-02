@@ -7,19 +7,19 @@ of a cycle:
 
 ```nim
 type
-Node = ref NodeObj
-NodeObj {.acyclic.} = object
-left, right: Node
-data: string
+  Node = ref NodeObj
+  NodeObj {.acyclic.} = object
+    left, right: Node
+    data: string
 ```
 
 Or if we directly use a ref object:
 
 ```nim
 type
-Node {.acyclic.} = ref object
-left, right: Node
-data: string
+  Node {.acyclic.} = ref object
+    left, right: Node
+    data: string
 ```
 
 In the example, a tree structure is declared with the `Node` type. Note
