@@ -40,7 +40,19 @@ nav:
       - Pragmas: manual/pragmas/pragmas.md
       - Implementation Specific Pragmas: manual/pragmas/specific_pragmas.md
       - User-defined pragmas: manual/pragmas/user_defined_pragmas.md
-      - Foreign function interface: manual/pragmas/ffi.md
+      - Foreign Function Interface: 
+        - FFI: manual/pragmas/ffi/ffi.md
+        - importc: manual/pragmas/ffi/pragma_importc.md
+        - exportc: manual/pragmas/ffi/pragma_exportc.md
+        - extern: manual/pragmas/ffi/pragma_extern.md
+        - bycopy: manual/pragmas/ffi/pragma_bycopy.md
+        - byref: manual/pragmas/ffi/pragma_byref.md
+        - varargs: manual/pragmas/ffi/pragma_varargs.md
+        - union: manual/pragmas/ffi/pragma_union.md
+        - packed: manual/pragmas/ffi/pragma_packed.md
+        - dynlib:
+          - dynlib for import: manual/pragmas/ffi/pragma_dynlib_import.md
+          - dynlib for export: manual/pragmas/ffi/pragma_dynlib_export.md          
       - Threads: manual/pragmas/threads.md
 
 
