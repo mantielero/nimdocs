@@ -53,11 +53,11 @@ nav:
         - dynlib:
           - dynlib for import: manual/pragmas/ffi/pragma_dynlib_import.md
           - dynlib for export: manual/pragmas/ffi/pragma_dynlib_export.md 
-                   
+
       - Threads: 
         - Introduction: manual/pragmas/threads/threads.md
         - thread: manual/pragmas/threads/pragma_thread.md
-
+        - threadvar: manual/pragmas/threads/pragma_threadvar.md
 
 
 markdown_extensions:
