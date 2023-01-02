@@ -7,6 +7,7 @@ theme:
 nav:
   - About: about.md
   - Manual:
+    - Authors: manual/author.md
     - About: manual/about.md
     - Definitions: manual/definitions.md
     - Lexical Analysis: manual/lexical_analysis.md
