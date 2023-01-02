@@ -40,7 +40,7 @@ nav:
       - Pragmas: 
         - Introduction: manual/pragmas/pragmas/pragmas.md
         - depricated: manual/pragmas/pragmas/pragma_depricated.md
-        - compileTime: manual/pragmas/pragmas/pragma_compileTime.md 
+        - compileTime: manual/pragmas/pragmas/pragma_compiletime.md 
         - noReturn: manual/pragmas/pragmas/pragma_noreturn.md 
         - acyclic: manual/pragmas/pragmas/pragma_acyclic.md          
         - shallow: manual/pragmas/pragmas/pragma_shallow.md  
