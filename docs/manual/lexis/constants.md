@@ -1,6 +1,6 @@
 ## Constants and Constant Expressions
 
-A `constant`{.interpreted-text role="idx"} is a symbol that is bound to
+A `constant` is a symbol that is bound to
 the value of a constant expression. Constant expressions are restricted
 to depend only on the following categories of values and operations,
 because these are either built into the language or declared and
