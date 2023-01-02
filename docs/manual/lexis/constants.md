@@ -28,38 +28,33 @@ the beginning of the Fibonacci series **at compile-time**. (This is a
 demonstration of flexibility in defining constants, not a recommended
 style for solving this problem.)
 
-``` {.nim test="\"nim c $1\""}
+```nim
+import std/strformat
+
+var fibN {.compileTime.}: int
+var fibPrev {.compileTime.}: int
+var fibPrevPrev {.compileTime.}: int
+
+proc nextFib(): int =
+  result = if fibN < 2:
+    fibN
+  else:
+    fibPrevPrev + fibPrev
+  inc(fibN)
+  fibPrevPrev = fibPrev
+  fibPrev = result
+
+const f0 = nextFib()
+const f1 = nextFib()
+
+const displayFib = block:
+  const f2 = nextFib()
+  var result = fmt"Fibonacci sequence: {f0}, {f1}, {f2}"
+  for i in 3..12:
+    add(result, fmt", {nextFib()}")
+  result
+
+static:
+  echo displayFib
 ```
-
-> import std/strformat
->
-> var fibN {.compileTime.}: int var fibPrev {.compileTime.}: int var
-> fibPrevPrev {.compileTime.}: int
->
-> proc nextFib(): int =
->
-> :   
->
->     result = if fibN \< 2:
->
->     :   fibN
->
->     else:
->
->     :   fibPrevPrev + fibPrev
->
->     inc(fibN) fibPrevPrev = fibPrev fibPrev = result
->
-> const f0 = nextFib() const f1 = nextFib()
->
-> const displayFib = block:
->
-> :   const f2 = nextFib() var result = fmt\"Fibonacci sequence: {f0},
->     {f1}, {f2}\" for i in 3..12: add(result, fmt\", {nextFib()}\")
->     result
->
-> static:
->
-> :   echo displayFib
-
 
