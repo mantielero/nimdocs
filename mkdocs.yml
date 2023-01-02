@@ -52,8 +52,11 @@ nav:
         - packed: manual/pragmas/ffi/pragma_packed.md
         - dynlib:
           - dynlib for import: manual/pragmas/ffi/pragma_dynlib_import.md
-          - dynlib for export: manual/pragmas/ffi/pragma_dynlib_export.md          
-      - Threads: manual/pragmas/threads.md
+          - dynlib for export: manual/pragmas/ffi/pragma_dynlib_export.md 
+                   
+      - Threads: 
+        - Introduction: manual/pragmas/threads/threads.md
+        - thread: manual/pragmas/threads/pragma_thread.md
 
 
 

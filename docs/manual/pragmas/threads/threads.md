@@ -20,31 +20,7 @@ invoked proc must not use `var` parameters nor must any of its
 parameters contain a `ref` or `closure` type. This enforces the *no heap
 sharing restriction*.
 
-### Thread pragma
 
-A proc that is executed as a new thread of execution should be marked by
-the `thread` pragma for reasons of readability. The compiler checks for
-violations of the `no heap sharing restriction`{.interpreted-text
-role="idx"}: This restriction implies that it is invalid to construct a
-data structure that consists of memory allocated from different
-(thread-local) heaps.
-
-A thread proc is passed to `createThread` or `spawn` and invoked
-indirectly; so the `thread` pragma implies `procvar`.
-
-### Threadvar pragma
-
-A variable can be marked with the `threadvar` pragma, which makes it a
-`thread-local` variable; Additionally,
-this implies all the effects of the `global` pragma.
-
-``` nim
-var checkpoints* {.threadvar.}: seq[string]
-```
-
-Due to implementation restrictions, thread-local variables cannot be
-initialized within the `var` section. (Every thread-local variable needs
-to be replicated at thread creation.)
 
 ### Threads and exceptions
 
