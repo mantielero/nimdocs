@@ -9,7 +9,7 @@ symbols. They cannot be imported from a module.
 
 Example:
 
-``` nim
+```nim
 when appType == "lib":
 {.pragma: rtl, exportc, dynlib, cdecl.}
 else:
@@ -27,9 +27,9 @@ dynamic library generation.
 It is possible to define custom typed pragmas. Custom pragmas do not
 affect code generation directly, but their presence can be detected by
 macros. Custom pragmas are defined using templates annotated with pragma
-\`pragma\`:
+`pragma`:
 
-``` nim
+```nim
 template dbTable(name: string, table_space: string = "") {.pragma.}
 template dbKey(name: string = "", primary_key: bool = false) {.pragma.}
 template dbForeignKey(t: typedesc) {.pragma.}
@@ -39,7 +39,7 @@ template dbIgnore {.pragma.}
 Consider this stylized example of a possible Object Relation Mapping
 (ORM) implementation:
 
-``` nim
+```nim
 const tblspace {.strdefine.} = "dev" # switch for dev, test and prod environments
 type
   User {.dbTable("users", tblspace).} = object
@@ -77,7 +77,7 @@ More examples with custom pragmas:
 
 -   Better serialization/deserialization control:
 
-    ``` nim
+    ```nim
     type MyObj = object
     a {.dontSerialize.}: int
     b {.defaultDeserialize: 5.}: int
@@ -86,7 +86,7 @@ More examples with custom pragmas:
 
 -   Adopting type for gui inspector in a game engine:
 
-    ``` nim
+    ```nim
     type MyComponent = object
     position {.editable, animatable.}: Vector3
     alpha {.editRange: [0.0..1.0], animatable.}: float32
@@ -99,37 +99,37 @@ attached to routines (procs, iterators, etc), type names, or type
 expressions. The compiler will perform the following simple syntactic
 transformations:
 
-``` nim
+```nim
 template command(name: string, def: untyped) = discard
 proc p() {.command("print").} = discard
 ```
 
 This is translated to:
 
-``` nim
+```nim
 command("print"):
 proc p() = discard
 ```
 
 ------------------------------------------------------------------------
 
-``` nim
+```nim
 type
-AsyncEventHandler = proc (x: Event) {.async.}
+  AsyncEventHandler = proc (x: Event) {.async.}
 ```
 
 This is translated to:
 
-``` nim
+```nim
 type
-AsyncEventHandler = async(proc (x: Event))
+  AsyncEventHandler = async(proc (x: Event))
 ```
 
 ------------------------------------------------------------------------
 
-``` nim
+```nim
 type
-MyObject {.schema: "schema.protobuf".} = object
+  MyObject {.schema: "schema.protobuf".} = object
 ```
 
 This is translated to a call to the `schema` macro with a `nnkTypeDef`
