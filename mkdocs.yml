@@ -1,0 +1,50 @@
+site_name: Nim docs
+
+theme:
+  name: material
+#  highlightjs: true
+
+nav:
+  - About: about.md
+  - Manual:
+    - About: manual/about.md
+    - Definitions: manual/definitions.md
+    - Lexical Analysis: manual/lexical_analysis.md
+    - Syntax: manual/syntax.md
+    - Order of evaluation: manual/precedence.md
+    - Constants and Contants Expressions: manual/constants.md
+    - Restrictions on Compile-Time Execution: manual/restrictions_compile_time_execution.md
+    - Types: manual/types.md
+    - Type Relations: manual/type_relations.md
+    - Overload Resolution: manual/overload_resolution.md
+    - Overload Disambiguation: manual/overload_disambiguation.md
+    - Statements Expressions: manual/statements_expressions.md
+    - Procedures: manual/procedures.md
+    - Methods: manual/methods.md
+    - Iterators and the for statement: manual/iterators_for.md
+    - Converters: manual/converters.md
+    - Type sections: manual/type_sections.md
+    - Exception Handling: manual/exception_handling.md
+    - Effect System: manual/effect_system.md
+    - Generics: manual/generics.md
+    - Templates: manual/templates.md
+    - Macros: manual/macros.md
+    - Special Types: manual/special_types.md
+    - Modules: manual/modules.md
+    - Compiler Messages: manual/compiler_messages.md
+    - Pragmas: manual/pragmas.md
+    - Implementation Specific Pragmas: manual/specific_pragmas.md
+    - User-defined pragmas: manual/user_defined_pragmas.md
+    - Foreign function interface: manual/ffi.md
+    - Threads: manual/threads.md
+
+
+
+markdown_extensions:
+- admonition
+- codehilite
+- pymdownx.details
+- pymdownx.superfences
+
+plugins:
+- search
