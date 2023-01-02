@@ -13,7 +13,7 @@ of the platform.
 ### Indentation
 
 Nim\'s standard grammar describes an
-`indentation sensitive`{.interpreted-text role="idx"} language. This
+`indentation sensitive` language. This
 means that all the control structures are recognized by indentation.
 Indentation consists only of spaces; tabulators are not allowed.
 
@@ -47,7 +47,7 @@ block of statements (simplified example):
 
 Comments start anywhere outside a string or character literal with the
 hash character `#`. Comments consist of a concatenation of
-`comment pieces`{.interpreted-text role="idx"}. A comment piece starts
+`comment pieces`. A comment piece starts
 with `#` and runs until the end of the line. The end of line characters
 belong to the piece. If the next line only consists of a comment piece
 with no other tokens between it and the preceding one, it does not start
@@ -59,7 +59,7 @@ i = 0     # This is a single comment over multiple lines.
 # The comment continues here.
 ```
 
-`Documentation comments`{.interpreted-text role="idx"} are comments that
+`Documentation comments` are comments that
 start with two `##`. Documentation comments are tokens; they are only
 allowed at certain places in the input file as they belong to the syntax
 tree.
@@ -136,7 +136,7 @@ manner. Other letters are compared case-insensitively within the ASCII
 range and underscores are ignored.
 
 This rather unorthodox way to do identifier comparisons is called
-`partial case-insensitivity`{.interpreted-text role="idx"} and has some
+`partial case-insensitivity` and has some
 advantages over the conventional case sensitivity:
 
 It allows programmers to mostly use their own preferred spelling style,
@@ -187,7 +187,7 @@ assert `assert`
 Terminal symbol in the grammar: `STR_LIT`.
 
 String literals can be delimited by matching double quotes, and can
-contain the following `escape sequences`{.interpreted-text role="idx"}:
+contain the following `escape sequences`:
 
 +------------------------+--------------------------------------------+
 | Escape sequence        | Meaning                                    |
@@ -198,34 +198,34 @@ contain the following `escape sequences`{.interpreted-text role="idx"}:
 | > `\r`, `\c`           | `carriage return`{.interpreted-text        |
 |                        | role="idx"}                                |
 +------------------------+--------------------------------------------+
-| > `\n`, `\l`           | `line feed`{.interpreted-text role="idx"}  |
+| > `\n`, `\l`           | `line feed`  |
 |                        | (often called `newline`{.interpreted-text  |
 |                        | role="idx"})                               |
 +------------------------+--------------------------------------------+
-| > `\f`                 | `form feed`{.interpreted-text role="idx"}  |
+| > `\f`                 | `form feed`  |
 +------------------------+--------------------------------------------+
-| > `\t`                 | `tabulator`{.interpreted-text role="idx"}  |
+| > `\t`                 | `tabulator`  |
 +------------------------+--------------------------------------------+
 | > `\v`                 | `vertical tabulator`{.interpreted-text     |
 |                        | role="idx"}                                |
 +------------------------+--------------------------------------------+
-| > `\\`                 | `backslash`{.interpreted-text role="idx"}  |
+| > `\\`                 | `backslash`  |
 +------------------------+--------------------------------------------+
 | > `\"`                 | `quotation mark`{.interpreted-text         |
 |                        | role="idx"}                                |
 +------------------------+--------------------------------------------+
-| > `\'`                 | `apostrophe`{.interpreted-text role="idx"} |
+| > `\'`                 | `apostrophe` |
 +------------------------+--------------------------------------------+
 | > `\` \'0\'..\'9\'+ \` | character with decimal value d\`:idx:; all |
 |                        | decimal digits directly following are used |
 |                        | for the character                          |
 +------------------------+--------------------------------------------+
-| > `\a`                 | `alert`{.interpreted-text role="idx"}      |
+| > `\a`                 | `alert`      |
 +------------------------+--------------------------------------------+
-| > `\b`                 | `backspace`{.interpreted-text role="idx"}  |
+| > `\b`                 | `backspace`  |
 +------------------------+--------------------------------------------+
-| > `\e`                 | `escape`{.interpreted-text role="idx"}     |
-|                        | `[ESC]`{.interpreted-text role="idx"}      |
+| > `\e`                 | `escape`     |
+|                        | `[ESC]`      |
 +------------------------+--------------------------------------------+
 | > `\x` HH              | `char                                      |
 |                        | acter with hex value HH`{.interpreted-text |
@@ -314,9 +314,9 @@ shortcut for `identifier("""string literal""")`.
 
 Character literals are enclosed in single quotes `''` and can contain
 the same escape sequences as strings - with one exception: the platform
-dependent `newline`{.interpreted-text role="idx"} (`\p`) is not allowed
+dependent `newline` (`\p`) is not allowed
 as it may be wider than one character (it can be the pair CR/LF). Here
-are the valid `escape sequences`{.interpreted-text role="idx"} for
+are the valid `escape sequences` for
 character literals:
 
 +---------------------+-----------------------------------------------+
@@ -325,33 +325,33 @@ character literals:
 | > `\r`, `\c`        | `carriage return`{.interpreted-text           |
 |                     | role="idx"}                                   |
 +---------------------+-----------------------------------------------+
-| > `\n`, `\l`        | `line feed`{.interpreted-text role="idx"}     |
+| > `\n`, `\l`        | `line feed`     |
 +---------------------+-----------------------------------------------+
-| > `\f`              | `form feed`{.interpreted-text role="idx"}     |
+| > `\f`              | `form feed`     |
 +---------------------+-----------------------------------------------+
-| > `\t`              | `tabulator`{.interpreted-text role="idx"}     |
+| > `\t`              | `tabulator`     |
 +---------------------+-----------------------------------------------+
 | > `\v`              | `vertical tabulator`{.interpreted-text        |
 |                     | role="idx"}                                   |
 +---------------------+-----------------------------------------------+
-| > `\\`              | `backslash`{.interpreted-text role="idx"}     |
+| > `\\`              | `backslash`     |
 +---------------------+-----------------------------------------------+
 | > `\"`              | `quotation mark`{.interpreted-text            |
 |                     | role="idx"}                                   |
 +---------------------+-----------------------------------------------+
-| > `\'`              | `apostrophe`{.interpreted-text role="idx"}    |
+| > `\'`              | `apostrophe`    |
 +---------------------+-----------------------------------------------+
 | > `\` \'0\'..\'9\'+ | `char                                         |
 |                     | acter with decimal value d`{.interpreted-text |
 |                     | role="idx"}; all decimal digits directly      |
 |                     | following are used for the character          |
 +---------------------+-----------------------------------------------+
-| > `\a`              | `alert`{.interpreted-text role="idx"}         |
+| > `\a`              | `alert`         |
 +---------------------+-----------------------------------------------+
-| > `\b`              | `backspace`{.interpreted-text role="idx"}     |
+| > `\b`              | `backspace`     |
 +---------------------+-----------------------------------------------+
-| > `\e`              | `escape`{.interpreted-text role="idx"}        |
-|                     | `[ESC]`{.interpreted-text role="idx"}         |
+| > `\e`              | `escape`        |
+|                     | `[ESC]`         |
 +---------------------+-----------------------------------------------+
 | > `\x` HH           | `c                                            |
 |                     | haracter with hex value HH`{.interpreted-text |
@@ -459,7 +459,7 @@ echo [a]-1
 ```
 
 The suffix starting with an apostrophe (\'\'\') is called a
-`type suffix`{.interpreted-text role="idx"}. Literals without a type
+`type suffix`. Literals without a type
 suffix are of an integer type unless the literal contains a dot or `E|e`
 in which case it is of type `float`. This integer type is `int` if the
 literal is in the range `low(int32)..high(int32)`, otherwise it is
@@ -578,7 +578,7 @@ The following strings denote other tokens:
 
     `   (    )     {    }     [    ]    ,  ;   [.    .]  {.   .}  (.  .)  [:
 
-The `slice`{.interpreted-text role="idx"} operator
+The `slice` operator
 `..`{.interpreted-text role="tok"} takes precedence over other tokens
 that contain a dot: `{..}` are the three tokens `{`{.interpreted-text
 role="tok"}, `..`{.interpreted-text role="tok"}, `}`{.interpreted-text

@@ -5,11 +5,11 @@ produce a value in contrast to expressions. However, some expressions
 are statements.
 
 Statements are separated into `simple statements`{.interpreted-text
-role="idx"} and `complex statements`{.interpreted-text role="idx"}.
+role="idx"} and `complex statements`.
 Simple statements are statements that cannot contain other statements
 like assignments, calls, or the `return` statement; complex statements
 can contain other statements. To avoid the
-`dangling else problem`{.interpreted-text role="idx"}, complex
+`dangling else problem`, complex
 statements always have to be indented. The details can be found in the
 grammar.
 
@@ -39,7 +39,7 @@ Ignoring the return value of a procedure without using a discard
 statement is a static error.
 
 The return value can be ignored implicitly if the called proc/iterator
-has been declared with the `discardable`{.interpreted-text role="idx"}
+has been declared with the `discardable`
 pragma:
 
 ``` nim
@@ -125,7 +125,7 @@ in binary.
   T = enum                    cast\[T\](0); this may be an invalid value
 
 The implicit initialization can be avoided for optimization reasons with
-the `noinit`{.interpreted-text role="idx"} pragma:
+the `noinit` pragma:
 
 ``` nim
 var
@@ -140,7 +140,7 @@ proc returnUndefinedValue: int {.noinit.} = discard
 ```
 
 The implicit initialization can also be prevented by the
-`requiresInit`{.interpreted-text role="idx"} type pragma. The compiler
+`requiresInit` type pragma. The compiler
 requires an explicit initialization for the object and all of its
 fields. However, it does a `control flow analysis`{.interpreted-text
 role="idx"} to prove the variable has been initialized and does not rely
@@ -198,7 +198,7 @@ doAssert s == "test"
 ### Let statement
 
 A `let` statement declares new local and global
-`single assignment`{.interpreted-text role="idx"} variables and binds a
+`single assignment` variables and binds a
 value to them. The syntax is the same as that of the `var` statement,
 except that the keyword `var` is replaced by the keyword `let`. Let
 variables are not l-values and can thus not be passed to `var`

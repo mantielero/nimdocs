@@ -25,7 +25,7 @@ unsigned int flag:1;
 
 ### Align pragma
 
-The `align`{.interpreted-text role="idx"} pragma is for variables and
+The `align` pragma is for variables and
 object field members. It modifies the alignment requirement of the
 entity being declared. The argument must be a constant power of 2. Valid
 non-zero alignments that are weaker than other align pragmas on the same
@@ -197,7 +197,7 @@ The `emit` pragma can be used to directly affect the output of the
 compiler\'s code generator. The code is then unportable to other code
 generators/backends. Its usage is highly discouraged! However, it can be
 extremely useful for interfacing with `C++`{.interpreted-text
-role="idx"} or `Objective C`{.interpreted-text role="idx"} code.
+role="idx"} or `Objective C` code.
 
 Example:
 
@@ -270,7 +270,7 @@ here.
 
 Similar to the [importc pragma for
 C](#foreign-function-interface-importc-pragma), the `importcpp` pragma
-can be used to import `C++`{.interpreted-text role="idx"} methods or C++
+can be used to import `C++` methods or C++
 symbols in general. The generated code then uses the C++ method calling
 syntax: `obj->method(arg)`{.interpreted-text role="cpp"}. In combination
 with the `header` and `emit` pragmas this allows *sloppy* interfacing
@@ -428,7 +428,7 @@ Sometimes a C++ class has a private copy constructor and so code like
 `Class c = Class(1,2);`{.interpreted-text role="cpp"} must not be
 generated but instead `Class c(1,2);`{.interpreted-text role="cpp"}. For
 this purpose the Nim proc that wraps a C++ constructor needs to be
-annotated with the `constructor`{.interpreted-text role="idx"} pragma.
+annotated with the `constructor` pragma.
 This pragma also helps to generate faster C++ code since construction
 then doesn\'t invoke the copy constructor:
 
@@ -502,7 +502,7 @@ The generated code then uses the Javascript method calling syntax:
 
 Similar to the [importc pragma for
 C](#foreign-function-interface-importc-pragma), the `importobjc` pragma
-can be used to import `Objective C`{.interpreted-text role="idx"}
+can be used to import `Objective C`
 methods. The generated code then uses the Objective C method calling
 syntax: `[obj method param1: arg]`. In addition with the `header` and
 `emit` pragmas this allows *sloppy* interfacing with libraries written
@@ -611,9 +611,9 @@ The implementation currently provides the following possible options
 
   pragma                                       description
   -------------------------------------------- --------------------------------------------
-  `intdefine`{.interpreted-text role="idx"}    Reads in a build-time define as an integer
-  `strdefine`{.interpreted-text role="idx"}    Reads in a build-time define as a string
-  `booldefine`{.interpreted-text role="idx"}   Reads in a build-time define as a bool
+  `intdefine`    Reads in a build-time define as an integer
+  `strdefine`    Reads in a build-time define as a string
+  `booldefine`   Reads in a build-time define as a bool
 
 ``` nim
 const FooBar {.intdefine.}: int = 5

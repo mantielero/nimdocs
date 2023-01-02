@@ -2,9 +2,9 @@
 
 Nim supports splitting a program into pieces by a module concept. Each
 module needs to be in its own file and has its own
-`namespace`{.interpreted-text role="idx"}. Modules enable
-`information hiding`{.interpreted-text role="idx"} and
-`separate compilation`{.interpreted-text role="idx"}. A module may gain
+`namespace`. Modules enable
+`information hiding` and
+`separate compilation`. A module may gain
 access to symbols of another module by the `import`{.interpreted-text
 role="idx"} statement. `Recursive module dependencies`{.interpreted-text
 role="idx"} are allowed, but are slightly subtle. Only top-level symbols
@@ -237,7 +237,7 @@ the following places:
 
 All identifiers of a module are valid from the point of declaration
 until the end of the module. Identifiers from indirectly dependent
-modules are *not* available. The `system`{.interpreted-text role="idx"}
+modules are *not* available. The `system`
 module is automatically imported in every module.
 
 If a module imports an identifier by two different modules, each

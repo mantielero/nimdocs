@@ -1,7 +1,7 @@
 ## Generics
 
 Generics are Nim\'s means to parametrize procs, iterators or types with
-`type parameters`{.interpreted-text role="idx"}. Depending on the
+`type parameters`. Depending on the
 context, the brackets are used either to introduce type parameters or to
 instantiate a generic proc, iterator, or type.
 
@@ -64,7 +64,7 @@ for str in preorder(root):
 ```
 
 The `T` is called a `generic type parameter`{.interpreted-text
-role="idx"} or a `type variable`{.interpreted-text role="idx"}.
+role="idx"} or a `type variable`.
 
 ### Is operator
 
@@ -142,7 +142,7 @@ foo = "this will fail" # error here, because foo is an int
 ```
 
 Nim allows for type classes and regular types to be specified as
-`type constraints`{.interpreted-text role="idx"} of the generic type
+`type constraints` of the generic type
 parameter:
 
 ``` nim
@@ -166,13 +166,13 @@ proc printFields(rec: RecordType) =
 ```
 
 Procedures utilizing type classes in such a manner are considered to be
-`implicitly generic`{.interpreted-text role="idx"}. They will be
+`implicitly generic`. They will be
 instantiated once for each unique combination of param types used within
 the program.
 
 By default, during overload resolution, each named type class will bind
 to exactly one concrete type. We call such type classes
-`bind once`{.interpreted-text role="idx"} types. Here is an example
+`bind once` types. Here is an example
 taken directly from the system module to illustrate this:
 
 ``` nim
@@ -400,6 +400,6 @@ genericB O()
 In module B has an `init` proc from module C in its scope that is not
 taken into account when `genericB` is instantiated which leads to the
 instantiation of `genericA`. The solution is to
-`forward`{.interpreted-text role="idx"} these symbols by a `bind`
+`forward` these symbols by a `bind`
 statement inside `genericB`.
 

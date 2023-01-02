@@ -55,7 +55,7 @@ These integer types are pre-defined:
 
 `uint`
 
-:   the generic `unsigned integer`{.interpreted-text role="idx"} type;
+:   the generic `unsigned integer` type;
     its size is platform-dependent and has the same size as a pointer.
     An integer literal with the type suffix `'u` is of this type.
 
@@ -88,13 +88,13 @@ for signed integers use the `%` suffix as convention:
   `toU16(a)`   treats `a` as unsigned and converts it to an unsigned integer of 16 bits (but still the `int16` type)
   `toU32(a)`   treats `a` as unsigned and converts it to an unsigned integer of 32 bits (but still the `int32` type)
 
-`Automatic type conversion`{.interpreted-text role="idx"} is performed
+`Automatic type conversion` is performed
 in expressions where different kinds of integer types are used: the
 smaller type is converted to the larger.
 
-A `narrowing type conversion`{.interpreted-text role="idx"} converts a
+A `narrowing type conversion` converts a
 larger to a smaller type (for example `int32 -> int16`). A
-`widening type conversion`{.interpreted-text role="idx"} converts a
+`widening type conversion` converts a
 smaller type to a larger type (for example `int16 -> int32`). In Nim
 only widening type conversions are *implicit*:
 
@@ -178,16 +178,16 @@ The IEEE standard defines five types of floating-point exceptions:
     input.
 
 The IEEE exceptions are either ignored during execution or mapped to the
-Nim exceptions: `FloatInvalidOpDefect`{.interpreted-text role="idx"},
-`FloatDivByZeroDefect`{.interpreted-text role="idx"},
-`FloatOverflowDefect`{.interpreted-text role="idx"},
-`FloatUnderflowDefect`{.interpreted-text role="idx"}, and
-`FloatInexactDefect`{.interpreted-text role="idx"}. These exceptions
-inherit from the `FloatingPointDefect`{.interpreted-text role="idx"}
+Nim exceptions: `FloatInvalidOpDefect`,
+`FloatDivByZeroDefect`,
+`FloatOverflowDefect`,
+`FloatUnderflowDefect`, and
+`FloatInexactDefect`. These exceptions
+inherit from the `FloatingPointDefect`
 base class.
 
-Nim provides the pragmas `nanChecks`{.interpreted-text role="idx"} and
-`infChecks`{.interpreted-text role="idx"} to control whether the IEEE
+Nim provides the pragmas `nanChecks` and
+`infChecks` to control whether the IEEE
 exceptions are ignored or trap a Nim exception:
 
 ``` nim
@@ -201,7 +201,7 @@ echo a / b # raises FloatOverflowDefect
 In the current implementation `FloatDivByZeroDefect` and
 `FloatInexactDefect` are never raised. `FloatOverflowDefect` is raised
 instead of `FloatDivByZeroDefect`. There is also a
-`floatChecks`{.interpreted-text role="idx"} pragma that is a short-cut
+`floatChecks` pragma that is a short-cut
 for the combination of `nanChecks` and `infChecks` pragmas.
 `floatChecks` are turned off as default.
 
@@ -215,7 +215,7 @@ evaluating during constant folding are true.
 
 ### Boolean type
 
-The boolean type is named `bool`{.interpreted-text role="idx"} in Nim
+The boolean type is named `bool` in Nim
 and can be one of the two pre-defined values `true` and `false`.
 Conditions in `while`, `if`, `elif`, `when`-statements need to be of
 type `bool`.
@@ -574,7 +574,7 @@ const
 
 Often fixed size arrays turn out to be too inflexible; procedures should
 be able to deal with arrays of different sizes. The
-`openarray`{.interpreted-text role="idx"} type allows this; it can only
+`openarray` type allows this; it can only
 be used for parameters. Openarrays are always indexed with an `int`
 starting at position 0. The `len`, `low` and `high` operations are
 available for open arrays too. Any array with a compatible base type can
@@ -769,7 +769,7 @@ Student = ref object of Person # Error: inheritance only works with non-final ob
 ### Object construction
 
 Objects can also be created with an
-`object construction expression`{.interpreted-text role="idx"} that has
+`object construction expression` that has
 the syntax `T(fieldA: valueA, fieldB: valueB, ...)` where `T` is an
 `object` type or a `ref object` type:
 
@@ -849,7 +849,7 @@ of the `case` statement: The branches in a `case` section may be
 indented too.
 
 In the example, the `kind` field is called the
-`discriminator`{.interpreted-text role="idx"}: For safety, its address
+`discriminator`: For safety, its address
 cannot be taken and assignments to it are restricted: The new value must
 not lead to a change of the active object branch. Also, when the fields
 of a particular branch are specified during object construction, the
@@ -938,10 +938,10 @@ var t = Token(kind: strLit, s: "abc")
 References (similar to pointers in other programming languages) are a
 way to introduce many-to-one relationships. This means different
 references can point to and modify the same location in memory (also
-called `aliasing`{.interpreted-text role="idx"}).
+called `aliasing`).
 
-Nim distinguishes between `traced`{.interpreted-text role="idx"} and
-`untraced`{.interpreted-text role="idx"} references. Untraced references
+Nim distinguishes between `traced` and
+`untraced` references. Untraced references
 are also called *pointers*. Traced references point to objects of a
 garbage-collected heap, untraced references point to manually allocated
 objects or objects somewhere else in memory. Thus untraced references
@@ -1111,14 +1111,14 @@ only compatible if they have the same calling convention. As a special
 extension, a procedure of the calling convention `nimcall` can be passed
 to a parameter that expects a proc of the calling convention `closure`.
 
-Nim supports these `calling conventions`{.interpreted-text role="idx"}:
+Nim supports these `calling conventions`:
 
-`nimcall`{.interpreted-text role="idx"}
+`nimcall`
 
 :   is the default convention used for a Nim **proc**. It is the same as
     `fastcall`, but only for C compilers that support `fastcall`.
 
-`closure`{.interpreted-text role="idx"}
+`closure`
 
 :   is the default calling convention for a **procedural type** that
     lacks any pragma annotations. It indicates that the procedure has a
@@ -1127,25 +1127,25 @@ Nim supports these `calling conventions`{.interpreted-text role="idx"}:
     the proc pointer and another one for the pointer to implicitly
     passed environment.
 
-`stdcall`{.interpreted-text role="idx"}
+`stdcall`
 
 :   This is the stdcall convention as specified by Microsoft. The
     generated C procedure is declared with the `__stdcall` keyword.
 
-`cdecl`{.interpreted-text role="idx"}
+`cdecl`
 
 :   The cdecl convention means that a procedure shall use the same
     convention as the C compiler. Under Windows the generated C
     procedure is declared with the `__cdecl` keyword.
 
-`safecall`{.interpreted-text role="idx"}
+`safecall`
 
 :   This is the safecall convention as specified by Microsoft. The
     generated C procedure is declared with the `__safecall` keyword. The
     word *safe* refers to the fact that all hardware registers shall be
     pushed to the hardware stack.
 
-`inline`{.interpreted-text role="idx"}
+`inline`
 
 :   The inline convention means the caller should not call the
     procedure, but inline its code directly. Note that Nim does not
@@ -1154,22 +1154,22 @@ Nim supports these `calling conventions`{.interpreted-text role="idx"}:
     ignore it and it may inline procedures that are not marked as
     `inline`.
 
-`fastcall`{.interpreted-text role="idx"}
+`fastcall`
 
 :   Fastcall means different things to different C compilers. One gets
     whatever the C `__fastcall` means.
 
-`thiscall`{.interpreted-text role="idx"}
+`thiscall`
 
 :   This is the thiscall calling convention as specified by Microsoft,
     used on C++ class member functions on the x86 architecture.
 
-`syscall`{.interpreted-text role="idx"}
+`syscall`
 
 :   The syscall convention is the same as `__syscall`{.interpreted-text
     role="c"} in C. It is used for interrupts.
 
-`noconv`{.interpreted-text role="idx"}
+`noconv`
 
 :   The generated C code will not have any explicit calling convention
     and thus use the C compiler\'s default calling convention. This is
@@ -1186,7 +1186,7 @@ convention `closure`, otherwise it has the calling convention `nimcall`.
 ### Distinct type
 
 A `distinct` type is a new type derived from a
-`base type`{.interpreted-text role="idx"} that is incompatible with its
+`base type` that is incompatible with its
 base type. In particular, it is an essential property of a distinct type
 that it **does not** imply a subtype relation between it and its base
 type. Explicit type conversions from a distinct type to its base type
@@ -1198,7 +1198,7 @@ A distinct type is an ordinal type if its base type is an ordinal type.
 #### Modeling currencies
 
 A distinct type can be used to model different physical
-`units`{.interpreted-text role="idx"} with a numerical base type, for
+`units` with a numerical base type, for
 example. The following example models currencies.
 
 Different currencies should not be mixed in monetary calculations.
@@ -1238,7 +1238,7 @@ proc `div` ...
 This quickly gets tedious. The implementations are trivial and the
 compiler should not generate all this code only to optimize it away
 later - after all `+` for dollars should produce the same binary code as
-`+` for ints. The pragma `borrow`{.interpreted-text role="idx"} has been
+`+` for ints. The pragma `borrow` has been
 designed to solve this problem; in principle, it generates the above
 trivial implementations:
 
@@ -1310,7 +1310,7 @@ Currently, only the dot accessor can be borrowed in this way.
 An SQL statement that is passed from Nim to an SQL database might be
 modeled as a string. However, using string templates and filling in the
 values is vulnerable to the famous
-`SQL injection attack`{.interpreted-text role="idx"}:
+`SQL injection attack`:
 
 ``` nim
 import std/strutils

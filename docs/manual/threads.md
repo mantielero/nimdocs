@@ -35,7 +35,7 @@ indirectly; so the `thread` pragma implies `procvar`.
 ### Threadvar pragma
 
 A variable can be marked with the `threadvar` pragma, which makes it a
-`thread-local`{.interpreted-text role="idx"} variable; Additionally,
+`thread-local` variable; Additionally,
 this implies all the effects of the `global` pragma.
 
 ``` nim

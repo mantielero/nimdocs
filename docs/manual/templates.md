@@ -50,7 +50,7 @@ declareInt(x) # invalid, because x has not been declared and so it has no type
 ```
 
 A template where every parameter is `untyped` is called an
-`immediate`{.interpreted-text role="idx"} template. For historical
+`immediate` template. For historical
 reasons, templates can be explicitly annotated with an `immediate`
 pragma and then these templates do not take part in overloading
 resolution and the parameters\' types are *ignored* by the compiler.
@@ -130,7 +130,7 @@ generally much more useful for macros.
 
 ### Symbol binding in templates
 
-A template is a `hygienic`{.interpreted-text role="idx"} macro and so
+A template is a `hygienic` macro and so
 opens a new scope. Most symbols are bound from the definition scope of
 the template:
 
@@ -212,7 +212,7 @@ tstLev(levA)
 
 ### Hygiene in templates
 
-Per default, templates are `hygienic`{.interpreted-text role="idx"}:
+Per default, templates are `hygienic`:
 Local identifiers declared in a template cannot be accessed in the
 instantiation context:
 
@@ -231,7 +231,7 @@ raise newException(IoError, e)
 
 Whether a symbol that is declared in a template is exposed to the
 instantiation scope is controlled by the `inject`{.interpreted-text
-role="idx"} and `gensym`{.interpreted-text role="idx"} pragmas:
+role="idx"} and `gensym` pragmas:
 `gensym`\'ed symbols are not exposed but `inject`\'ed symbols are.
 
 The default for symbols of entity `type`, `var`, `let` and `const` is
@@ -260,7 +260,7 @@ template t() =
 ```
 
 To get rid of hygiene in templates, one can use the
-`dirty`{.interpreted-text role="idx"} pragma for a template. `inject`
+`dirty` pragma for a template. `inject`
 and `gensym` have no effect in `dirty` templates.
 
 `gensym`\'ed symbols cannot be used as `field` in the `x.field` syntax.

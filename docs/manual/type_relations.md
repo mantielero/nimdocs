@@ -93,7 +93,7 @@ proc isExplicitlyConvertible(a, b: PType): bool =
 ```
 
 The convertible relation can be relaxed by a user-defined type
-`converter`{.interpreted-text role="idx"}.
+`converter`.
 
 ``` nim
 converter toInt(x: char): int = result = ord(x)

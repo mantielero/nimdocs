@@ -37,7 +37,7 @@ they should use static binding, but `eval` is a method because it
 requires dynamic binding.
 
 As can be seen in the example, base methods have to be annotated with
-the `base`{.interpreted-text role="idx"} pragma. The `base` pragma also
+the `base` pragma. The `base` pragma also
 acts as a reminder for the programmer that a base method `m` is used as
 the foundation to determine all the effects that a call to `m` might
 cause.
@@ -79,8 +79,8 @@ collide(a, b) # output: 2
 ### Inhibit dynamic method resolution via procCall
 
 Dynamic method resolution can be inhibited via the builtin
-`system.procCall`{.interpreted-text role="idx"}. This is somewhat
-comparable to the `super`{.interpreted-text role="idx"} keyword that
+`system.procCall`. This is somewhat
+comparable to the `super` keyword that
 traditional OOP languages offer.
 
 ``` {.nim test="\"nim c $1\""}

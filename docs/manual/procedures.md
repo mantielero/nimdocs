@@ -1,8 +1,8 @@
 ## Procedures
 
 What most programming languages call `methods`{.interpreted-text
-role="idx"} or `functions`{.interpreted-text role="idx"} are called
-`procedures`{.interpreted-text role="idx"} in Nim. A procedure
+role="idx"} or `functions` are called
+`procedures` in Nim. A procedure
 declaration consists of an identifier, zero or more formal parameters, a
 return value type and a block of code. Formal parameters are declared as
 a list of identifiers separated by either comma or semicolon. A
@@ -44,7 +44,7 @@ outp = inp + 47
 If the proc declaration has no body, it is a `forward`{.interpreted-text
 role="idx"} declaration. If the proc returns a value, the procedure body
 can access an implicitly declared variable named
-`result`{.interpreted-text role="idx"} that represents the return value.
+`result` that represents the return value.
 Procs can be overloaded. The overloading resolution algorithm determines
 which proc is the best match for the arguments. Example:
 
@@ -77,7 +77,7 @@ callme 0, 1, "abc", '\t'              # (x=0, y=1, s="abc", c='\t', b=false)
 
 A procedure may call itself recursively.
 
-`Operators`{.interpreted-text role="idx"} are procedures with a special
+`Operators` are procedures with a special
 operator symbol as identifier:
 
 ``` nim
@@ -187,7 +187,7 @@ s.host = 34  # same as `host=`(s, 34)
 ```
 
 A proc defined as `f=` (with the trailing `=`) is called a
-`setter`{.interpreted-text role="idx"}. A setter can be called
+`setter`. A setter can be called
 explicitly via the common backticks notation:
 
 ``` nim
@@ -269,7 +269,7 @@ resembling lambdas as they are in languages like JavaScript, C#, etc.
 ### Func
 
 The `func` keyword introduces a shortcut for a
-`noSideEffect`{.interpreted-text role="idx"} proc.
+`noSideEffect` proc.
 
 ``` nim
 func binarySearch[T](a: openArray[T]; elem: T): int
@@ -384,7 +384,7 @@ assert t.res == 1
 assert t.remainder == 3
 ```
 
-One can use `tuple unpacking`{.interpreted-text role="idx"} to access
+One can use `tuple unpacking` to access
 the tuple\'s fields:
 
 ``` nim
@@ -454,9 +454,9 @@ of the language specification will be changed. See
 <https://github.com/nim-lang/RFCs/issues/230> for more information.
 
 The return value is represented inside the body of a routine as the
-special `result`{.interpreted-text role="idx"} variable. This allows for
+special `result` variable. This allows for
 a mechanism much like C++\'s \"named return value optimization\"
-(`NRVO`{.interpreted-text role="idx"}). NRVO means that the stores to
+(`NRVO`). NRVO means that the stores to
 `result` inside `p` directly affect the destination `dest` in
 `let/var dest = p(args)` (definition of `dest`) and also in
 `dest = p(args)` (assignment to `dest`). This is achieved by rewriting

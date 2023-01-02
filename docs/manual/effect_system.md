@@ -202,7 +202,7 @@ analogous to the inference for exception tracking.**
 
 ### GC safety effect
 
-We call a proc `p` `GC safe`{.interpreted-text role="idx"} when it
+We call a proc `p` `GC safe` when it
 doesn\'t access any global variable that contains GC\'ed memory
 (`string`, `seq`, `ref` or a closure) either directly or indirectly
 through a call to a GC unsafe proc.
@@ -210,7 +210,7 @@ through a call to a GC unsafe proc.
 **The GC safety property is usually inferred. The inference for GC
 safety is analogous to the inference for exception tracking.**
 
-The `gcsafe`{.interpreted-text role="idx"} annotation can be used to
+The `gcsafe` annotation can be used to
 mark a proc to be gcsafe, otherwise this property is inferred by the
 compiler. Note that `noSideEffect` implies `gcsafe`.
 

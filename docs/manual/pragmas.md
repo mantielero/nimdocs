@@ -209,7 +209,7 @@ If the `line` pragma is used with a parameter, the parameter needs be a
 ### linearScanEnd pragma
 
 The `linearScanEnd` pragma can be used to tell the compiler how to
-compile a Nim `case`{.interpreted-text role="idx"} statement.
+compile a Nim `case` statement.
 Syntactically it has to be used as a statement:
 
 ``` nim
@@ -238,7 +238,7 @@ linear scanning.
 ### computedGoto pragma
 
 The `computedGoto` pragma can be used to tell the compiler how to
-compile a Nim `case`{.interpreted-text role="idx"} in a `while true`
+compile a Nim `case` in a `while true`
 statement. Syntactically it has to be used as a statement inside the
 loop:
 
@@ -315,7 +315,7 @@ Example:
 
 ### push and pop pragmas
 
-The `push/pop`{.interpreted-text role="idx"} pragmas are very similar to
+The `push/pop` pragmas are very similar to
 the option directive, but are used to override the settings temporarily.
 Example:
 
@@ -327,7 +327,7 @@ Example:
 {.pop.} # restore old settings
 ```
 
-`push/pop`{.interpreted-text role="idx"} can switch on/off some standard
+`push/pop` can switch on/off some standard
 library pragmas, example:
 
 ``` nim

@@ -1,6 +1,6 @@
 ## Foreign function interface
 
-Nim\'s `FFI`{.interpreted-text role="idx"} (foreign function interface)
+Nim\'s `FFI` (foreign function interface)
 is extensive and only the parts that scale to other future backends
 (like the LLVM/JavaScript backends) are documented here.
 

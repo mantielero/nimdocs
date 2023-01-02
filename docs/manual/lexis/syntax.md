@@ -26,7 +26,7 @@ Unary operators always bind stronger than any binary operator: `$a + b`
 is `($a) + b` and not `$(a + b)`.
 
 If a unary operator\'s first character is `@` it is a
-`sigil-like`{.interpreted-text role="idx"} operator which binds stronger
+`sigil-like` operator which binds stronger
 than a \`primarySuffix\`: `@x.abc` is parsed as `(@x).abc` whereas
 `$x.abc` is parsed as `$(x.abc)`.
 
@@ -34,7 +34,7 @@ For binary operators that are not keywords, the precedence is determined
 by the following rules:
 
 Operators ending in either `->`, `~>` or `=>` are called
-`arrow like`{.interpreted-text role="idx"}, and have the lowest
+`arrow like`, and have the lowest
 precedence of all operators.
 
 If the operator ends with `=` and its first character is none of `<`,

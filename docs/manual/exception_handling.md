@@ -28,9 +28,9 @@ The statements after the `try` are executed in sequential order unless
 an exception `e` is raised. If the exception type of `e` matches any
 listed in an `except` clause, the corresponding statements are executed.
 The statements following the `except` clauses are called
-`exception handlers`{.interpreted-text role="idx"}.
+`exception handlers`.
 
-If there is a `finally`{.interpreted-text role="idx"} clause, it is
+If there is a `finally` clause, it is
 always executed after the exception handlers.
 
 The exception is *consumed* in an exception handler. However, an
@@ -195,8 +195,8 @@ Apart from built-in operations like array indexing, memory allocation,
 etc. the `raise` statement is the only way to raise an exception.
 
 If no exception name is given, the current exception is
-`re-raised`{.interpreted-text role="idx"}. The
-`ReraiseDefect`{.interpreted-text role="idx"} exception is raised if
+`re-raised`. The
+`ReraiseDefect` exception is raised if
 there is no exception to re-raise. It follows that the `raise` statement
 *always* raises an exception.
 

@@ -81,7 +81,7 @@ array constructor expression. This is why `debug` iterates over all of
 The above `debug` macro relies on the fact that `write`, `writeLine` and
 `stdout` are declared in the system module and are thus visible in the
 instantiating context. There is a way to use bound identifiers (aka
-`symbols`{.interpreted-text role="idx"}) instead of using unbound
+`symbols`) instead of using unbound
 identifiers. The `bindSym` builtin can be used for that:
 
 ``` {.nim test="\"nim c $1\""}

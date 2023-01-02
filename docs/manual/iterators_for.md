@@ -1,8 +1,8 @@
 ## Iterators and the for statement
 
-The `for`{.interpreted-text role="idx"} statement is an abstract
+The `for` statement is an abstract
 mechanism to iterate over the elements of a container. It relies on an
-`iterator`{.interpreted-text role="idx"} to do so. Like `while`
+`iterator` to do so. Like `while`
 statements, `for` statements open an `implicit block`{.interpreted-text
 role="idx"} so that they can be left with a `break` statement.
 
@@ -66,7 +66,7 @@ account.
 ### First-class iterators
 
 There are 2 kinds of iterators in Nim: *inline* and *closure* iterators.
-An `inline iterator`{.interpreted-text role="idx"} is an iterator
+An `inline iterator` is an iterator
 that\'s always inlined by the compiler leading to zero overhead for the
 abstraction, but may result in a heavy increase in code size.
 
@@ -79,7 +79,7 @@ Inline iterators are second class citizens; They can be passed as
 parameters only to other inlining code facilities like templates,
 macros, and other inline iterators.
 
-In contrast to that, a `closure iterator`{.interpreted-text role="idx"}
+In contrast to that, a `closure iterator`
 can be passed around more freely:
 
 ``` nim
@@ -117,7 +117,7 @@ versions of the implementation.
 
 The `iterator` type is always of the calling convention `closure`
 implicitly; the following example shows how to use iterators to
-implement a `collaborative tasking`{.interpreted-text role="idx"}
+implement a `collaborative tasking`
 system:
 
 ``` nim

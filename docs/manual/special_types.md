@@ -139,7 +139,7 @@ var tmp: forwardType(int)
 
 One can obtain the type of a given expression by constructing a `typeof`
 value from it (in many other languages this is known as the
-`typeof`{.interpreted-text role="idx"} operator):
+`typeof` operator):
 
 ``` nim
 var x = 0

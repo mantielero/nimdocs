@@ -99,7 +99,7 @@ gen(ri) # "ref T"
 
 If the formal parameter `f` is of type `var T` in addition to the
 ordinary type checking, the argument is checked to be an
-`l-value`{.interpreted-text role="idx"}. `var T` matches better than
+`l-value`. `var T` matches better than
 just `T` then.
 
 ``` nim
@@ -120,7 +120,7 @@ sayHello(3) # 3
 
 ### Lazy type resolution for untyped
 
-**Note**: An `unresolved`{.interpreted-text role="idx"} expression is an
+**Note**: An `unresolved` expression is an
 expression for which no symbol lookups and no type checking have been
 performed.
 
