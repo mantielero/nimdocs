@@ -9,12 +9,12 @@ are used to build a tree structure:
 
 ```nim
 type
-NodeKind = enum nkLeaf, nkInner
-Node {.shallow.} = object
-case kind: NodeKind
-of nkLeaf:
-strVal: string
-of nkInner:
-children: seq[Node]
+  NodeKind = enum nkLeaf, nkInner
+  Node {.shallow.} = object
+    case kind: NodeKind
+    of nkLeaf:
+      strVal: string
+    of nkInner:
+      children: seq[Node]
 ```
 
