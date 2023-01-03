@@ -1,6 +1,7 @@
 # About
-This document is based on https://nim-lang.org/documentation.html
+This document is just a copy from Jan'23 of Nim's manual taken from https://nim-lang.org/documentation.html
 
+So don't use me. Go to the original source of data.
 
 
 This documents are created using [mkdocs](https://www.mkdocs.org/).

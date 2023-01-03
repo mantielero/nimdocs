@@ -6,6 +6,42 @@ theme:
 
 nav:
   - About: about.md
+  - Learn:
+    - Introduction: learn/intro.md
+    - Learn Nim in x minutes: learn/overview/learn_nim_in_5_minutes.md
+    - Nim by example:
+      - Getting Started: learn/nim_by_example/getting_started.md
+      - Hello world: learn/nim_by_example/hello_world.md
+      - Comments: learn/nim_by_example/comments.md
+      - Variables: learn/nim_by_example/variables.md
+      - Result: learn/nim_by_example/result.md
+      - Type Casting and Inference: learn/nim_by_example/type_casting_inference.md
+      - If, else and while: learn/nim_by_example/if_else_while.md
+      - Case Statements: learn/nim_by_example/case.md
+      - For Loops & Iterators: learn/nim_by_example/for_loops_iterators.md
+      - Procs: learn/nim_by_example/procs.md
+      - First class functions: learn/nim_by_example/first_class_functions.md
+      - Blocks: learn/nim_by_example/blocks.md
+      - Primitive types: learn/nim_by_example/primitives.md
+      - Type aliases: learn/nim_by_example/types.md
+      - Object types: learn/nim_by_example/object_types.md
+      - Enum types: learn/nim_by_example/enum_types.md
+      - Distinct types: learn/nim_by_example/distinct_types.md
+      - Strings: learn/nim_by_example/strings.md
+      - Arrays: learn/nim_by_example/arrays.md
+      - Seqs: learn/nim_by_example/seqs.md
+      - Bitsets: learn/nim_by_example/bitsets.md
+      - Files: learn/nim_by_example/files.md
+      - JSON: learn/nim_by_example/json.md
+      - Varargs: learn/nim_by_example/varargs.md
+      - String Formatting: learn/nim_by_example/string_formatting.md
+      - Object Oriented Programming: learn/nim_by_example/oop.md
+      - Parallelism: learn/nim_by_example/parallelism.md
+      - Channels: learn/nim_by_example/channels.md
+      - Concurrency: learn/nim_by_example/concurrency.md
+      - Macros: learn/nim_by_example/macros.md
+
+
   - Manual:
     - Authors: manual/author.md
 
