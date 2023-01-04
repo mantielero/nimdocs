@@ -41,8 +41,10 @@ nav:
       - Concurrency: learn/nim_by_example/concurrency.md
       - Macros: learn/nim_by_example/macros.md
 
+  - How-to:
+    - Index: howto/index.md
 
-  - Manual:
+  - Reference:
     - Authors: manual/author.md
 
     - Lexis:
@@ -117,6 +119,8 @@ nav:
         - thread: manual/pragmas/threads/pragma_thread.md
         - threadvar: manual/pragmas/threads/pragma_threadvar.md
 
+  - Explanation:
+    - Index: explanation/index.md
 
 markdown_extensions:
 - admonition
