@@ -1,13 +1,15 @@
 Procedures in Nim are declared using proc and require that their parameter and return types be annotated. After the types and parameters, an = is used to denote the start of the function body. Another thing to note is that procedures have uniform function call syntax, which means that they can called as both foo(a, b) or a.foo(b).
-
+```nim
 proc fibonacci(n: int): int =
   if n < 2:
     result = n
   else:
     result = fibonacci(n - 1) + (n - 2).fibonacci
-Exporting symbols
-Encapsulation is also supported, not by conventions such as prepending the name with underscores but by annotating a procedure with *, which exports it and makes it available for use by modules.
+```
 
+# Exporting symbols
+Encapsulation is also supported, not by conventions such as prepending the name with underscores but by annotating a procedure with *, which exports it and makes it available for use by modules.
+```nim
 # module1:
 proc foo*(): int = 2
 proc bar(): int = 3
@@ -15,18 +17,22 @@ proc bar(): int = 3
 # module2:
 echo foo()  # Valid
 echo bar()  # will not compile
-Side effect analyses
-Nim provides support for functional programming and so includes the {.noSideEffect.} pragma, which statically ensures there are no side effects.
+```
 
+# Side effect analyses
+Nim provides support for functional programming and so includes the {.noSideEffect.} pragma, which statically ensures there are no side effects.
+```nim
 proc sum(x, y: int): int {. noSideEffect .} =
   x + y
 
 proc minus(x, y: int): int {. noSideEffect .} =
   echo x  # error: 'minus' can have side effects
   x - y
-Operators
-To create an operator, the symbols that are to be used must be encased inside `s to signify they are operators.
+```
 
+# Operators
+To create an operator, the symbols that are to be used must be encased inside `s to signify they are operators.
+```nim
 proc `$`(a: array[2, array[2, int]]): string =
   result = ""
   for v in a:
@@ -42,9 +48,11 @@ proc `^&*^@%`(a, b: string): string =
   result = a[0] & b[high(b)]
 
 assert("foo" ^&*^@% "bar" == "fr")
-Generic Functions
-Generic functions are like C++’s templates and allow for the same statically checked duck-typing semantics as templates.
+```
 
+# Generic Functions
+Generic functions are like C++’s templates and allow for the same statically checked duck-typing semantics as templates.
+```nim
 proc `+`(a, b: string): string =
   a & b
 
@@ -54,3 +62,4 @@ proc `*`[T](a: T, b: int): T =
     result = result + a  # calls `+` from line 2
 
 assert("a" * 10 == "aaaaaaaaaa")
+```

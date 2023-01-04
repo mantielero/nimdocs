@@ -1,10 +1,12 @@
 
 Nim also supports case statements, which are like switches in other languages. There are several things to note here:
 
-You can use strings in the switch statement
-Sets and ranges of ordinal types are also usable
-case statements, like most things, are actually expressions
-It is required that every possible case be covered
+- You can use strings in the switch statement
+- Sets and ranges of ordinal types are also usable
+- case statements, like most things, are actually expressions
+- It is required that every possible case be covered
+
+```nim title="case_stmts.nim"
 case "charlie":
   of "alfa":
     echo "A"
@@ -35,7 +37,11 @@ proc positiveOrNegative(num: int): string =
       "impossible"
 
 echo positiveOrNegative(-1)
+```
+
+```sh
 nim c -r ./case_stmts.nim
 C
 Consonant
 negative
+```

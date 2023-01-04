@@ -1,9 +1,8 @@
-JSON
-Nim’s json module allows you to work with JSON data.
+Nim’s `json` module allows you to work with JSON data.
 
-Converting Data Into JSON
+# Converting Data Into JSON
 The json module provides the %* operator which is used to create JSON objects. Note the use of the $ operator to convert the JsonObject to its string representation.
-
+```nim
 import json
 
 let element = "Hydrogen"
@@ -12,7 +11,10 @@ let atomicNumber = 1
 let jsonObject = %* {"element": element, "atomicNumber": atomicNumber}
 # This will print {"element":"Hydrogen", "atomicNumber": 1}
 echo $jsonObject
-Parsing and accessing JSON
+```
+
+# Parsing and accessing JSON
+```nim
 import json
 
 # We start with a string representation of a JSON object
@@ -28,13 +30,15 @@ let parsedArray = parseJson(jsonArray)
 let eight = parsedArray[1].getInt()
 # This will print 8
 echo eight
-The parseJson method takes in a string representing a JSON object or array and transforms it into a JsonNode. We can access the fields of a JsonNode object using the [] syntax.
+```
 
-The procs getInt, getFloat, getStr and getBool are used for converting JsonNode’s into Nim data types.
+The `parseJson` method takes in a string representing a JSON object or array and transforms it into a `JsonNode`. We can access the fields of a JsonNode object using the `[]` syntax.
 
-Parsing JSON into a Nim Object
+The procs `getInt`, `getFloat`, `getStr` and `getBool` are used for converting JsonNode’s into Nim data types.
+
+# Parsing JSON into a Nim Object
 In some cases you may want to convert from a JSON string directly to an object.
-
+```nim
 import json
 
 # First we'll define our types
@@ -52,4 +56,7 @@ let element = to(jsonObject, Element)
 echo element.name
 # This will print 6
 echo element.atomicNumber
-See the json module documentation for more information.
+```
+
+See the [json module](https://nim-lang.org/docs/json.html) documentation for more information.
+

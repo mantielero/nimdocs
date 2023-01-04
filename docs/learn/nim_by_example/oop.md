@@ -1,6 +1,6 @@
-Member functions or Method calls
+# Member functions or Method calls
 Member functions, typically known as methods in OOP terminology, can be implemented directly using procs, thanks to the Uniform Call Syntax.
-
+```nim
 type Animal = object
   name: string
   age: int
@@ -13,8 +13,10 @@ var sparky = Animal(name: "Sparky", age: 10)
 sparky.speak("Hi")
 # this is the same as the below
 speak(sparky, "Hi")
-As you might have guessed, the method call syntax is not restricted to object types.
+```
 
+As you might have guessed, the method call syntax is not restricted to object types.
+```nim
 proc double(num: int):int =
   return num*2
   
@@ -23,8 +25,10 @@ double(10)
 10.double()
 # you can even drop the empty paranthesis
 10.double
-Now, when using UFCS to think about procs as member functions, there is an important point to keep in mind about mutability. Consider this example.
+```
 
+Now, when using UFCS to think about procs as member functions, there is an important point to keep in mind about mutability. Consider this example.
+```nim
 type Animal = object
   name: string
   age: int
@@ -33,8 +37,10 @@ proc incAge(self: Animal) =
   self.age += 1
   
 var sparky = Animal(name: "Sparky", age: 3)
-This fails compiling with the following error:
+```
 
+This fails compiling with the following error:
+```
 Error: type mismatch: got <int, int literal(1)>
 but expected one of:
 proc `+=`[T: SomeInteger](x: var T; y: T)
@@ -47,39 +53,49 @@ proc `+=`[T: float | float32 | float64](x: var T; y: T)
   but expression 'self.age' is of type: int
 
 expression: self.age += 1
-If you try something simpler:
+```
 
+If you try something simpler:
+```nim
 proc setName(self: Animal, name: string) =
   self.name = name
+```
+
 the error message is a lot clearer:
-
+```
 Error: 'self.name' cannot be assigned to
-This happens because arguments to proc are immutable by default. The error can be fixed by marking the argument as mutable using var:
+```
 
+This happens because arguments to proc are immutable by default. The error can be fixed by marking the argument as mutable using var:
+```
 proc incAge(self: var Animal) =
   self.age += 1
 
 proc setName(self: var Animal, name: string) =
   self.name = name
+```
+
 Now, everything works.
 
-Note that ref objects can be mutated, and the following works correctly:
-
+Note that `ref` objects can be mutated, and the following works correctly:
+```nim
 type Animal = ref object
   name: string
   age: int
   
 proc incAge(self: Animal) =
   self.age += 1
-Why is this? This is because self is just a pointer and is not being mutated. If you try to change the self variable itself, it would not work.
+```
 
-Inheritance
+Why is this? This is because `self` is just a pointer and is not being mutated. If you try to change the self variable itself, it would not work.
+
+# Inheritance
 Nim supports inheritance and dynamically dispatched (also known as “virtual”) methods. Methods work in the same way as procs, including UFCS, but the runtime type of the object that a method is called with is used to determine which version to call.
 
 Inheritance is created with the of keyword in the type declaration of an object. Note that base objects that are going to be inherited have to inherit from RootObj since an object type with no ancestors are implicitly final.
 
 A method is overridden by creating a new method with parameter types of the subtype.
-
+```
 type Animal = ref object of RootObj
   name: string
   age: int
@@ -101,23 +117,32 @@ animals.add(Cat(name: "Mitten", age: 10))
 for a in animals:
   echo a.vocalize()
   echo a.ageHumanYrs()
+```
+
+```
 nim c -r oop.nim
 woof
 70
 meow
 10
-Should you use procs or methods?
+```
+
+# Should you use procs or methods?
 Since procs are statically dispatched, they are more performant compared to the dynamic dispatched methods.
 
-As discussed in this blog, use methods only if you need the dynamic dispatch.
+As discussed in [this blog](https://matthiashager.com/proc-method-nim), use methods only if you need the dynamic dispatch.
 
-Testing subtypes
+# Testing subtypes
 It is also possible to check if an object is of a given subtype with the of keyword. For example,
-
+```nim
 echo(animals[0] of Dog)
 echo(animals[0] of Cat)
 echo(animals[0] of Animal)
+```
+
+```
 nim c -r of_op.nim
 true
 false
 true
+```

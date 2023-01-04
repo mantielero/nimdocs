@@ -1,4 +1,3 @@
-Comments
 Comments in Nim begin with the hash character.
 ```nim 
 # This is a comment

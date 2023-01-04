@@ -1,10 +1,9 @@
-Concurrency
-Concurrency is provided in Nim, using async/await syntax. This feature is powered by the asyncdispatch module.
+Concurrency is provided in Nim, using `async/await` syntax. This feature is powered by the [asyncdispatch](https://nim-lang.org/docs/asyncdispatch.html) module.
 
 Note that, concurrency is not parallelism. All the examples here are async functions that run on a single thread. This is mainly useful for IO intensive tasks.
 
 A general example looks like this:
-
+```nim
 import asyncdispatch
 
 proc ioManager(id: string) {.async.} =
@@ -18,30 +17,35 @@ let
   mb = ioManager("b")
 
 waitFor ma and mb
-You should see an output like:
+```
 
+You should see an output like:
+```sh
 a - run: 1
 b - run: 1
 a - run: 2
 b - run: 2
 a - run: 3
 b - run: 3
+```
 showing interleaved function completions.
 
-Async functions are tagged with the {.async.} pragma. These functions can now use the await keyword to wait for async procedures.
+Async functions are tagged with the `{.async.}` pragma. These functions can now use the await keyword to wait for async procedures.
 
-In the example above, we have used waitFor on 2 async functions, so the execution blocks until both functions are run to completion.
+In the example above, we have used `waitFor` on 2 async functions, so the execution blocks until both functions are run to completion.
 
 An alternative option is:
-
+```nim
 runForever()
+```
+
 which blocks, waiting indefinitely for all asynchronous functions.
 
-You may also find Peter’s article on async programming helpful.
+You may also find [Peter’s article on async programming](https://peterme.net/asynchronous-programming-in-nim.html) helpful.
 
-Higher Async modules
+# Higher Async modules
 The underlying asyncdispatch modules is used by several higher level modules:
 
-asyncfile for async file operations.
-asyncnet for async networking operations.
-asynchttpserver for an async http server.
+1. [asyncfile](https://nim-lang.org/docs/asyncfile.html) for async file operations.
+2. [asyncnet](https://nim-lang.org/docs/asyncnet.html) for async networking operations.
+3. [asynchttpserver](https://nim-lang.org/docs/asynchttpserver.html) for an async http server.

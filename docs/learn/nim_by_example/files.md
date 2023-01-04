@@ -1,16 +1,20 @@
-Reading from a File
+# Reading from a File
 Suppose we have a file in the same directory as our nim program, kittens.txt with the following contents.
-
+``` title="kittens.txt"
 Spitfire
 Vivian
 Motor
-We can use the readFile proc to read the entire file into memory.
+```
 
+We can use the readFile proc to read the entire file into memory.
+```nim
 # This will read the entire file into the string entireFile
 let entireFile = readFile("kittens.txt")
 echo entireFile  # prints the entire file
-We can also read the lines of a file by opening a File object and using the readLine proc to read individual lines.
+```
 
+We can also read the lines of a file by opening a File object and using the readLine proc to read individual lines.
+```nim
 proc readKittens() =
   let f = open("kittens.txt")
   # Close the file object when you are done with it
@@ -20,15 +24,19 @@ proc readKittens() =
   echo firstLine  # prints Spitfire
 
 readKittens()
-Writing to a File
-We can write a string to a file using the writeFile proc.
+```
 
+# Writing to a File
+We can write a string to a file using the `writeFile` proc.
+```nim
 let text = "Cats are very cool!"
 writeFile("cats.txt", text)
-This will create a file on the system named cats.txt containing “Cats are very cool!”
+```
 
-We can also write a file line by line using a File object and the writeLine proc.
+This will create a file on the system named `cats.txt` containing "Cats are very cool!"
 
+We can also write a file line by line using a `File` object and the `writeLine` proc.
+```nim
 proc writeCatActivities() =
   let lines = ["Play", "Eat", "Sleep"]
   # The fmWrite constant specifies that we are opening the file for writing.
@@ -39,8 +47,12 @@ proc writeCatActivities() =
     f.writeLine(line)
 
 writeCatActivities()
-After running this program there should be a file called catactivities.txt with the following contents.
+```
 
+After running this program there should be a file called `catactivities.txt` with the following contents.
+
+```txt title="catactivities.txt"
 Play
 Eat
 Sleep
+```

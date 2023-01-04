@@ -1,12 +1,12 @@
-Macros
 Nim’s syntax is incredibly versatile, and macros can be used to rewrite the abstract syntax tree of a program. The general process for writing a macro consists of two steps that are repeated until the desired results are achieved:
 
-Dump and examine the AST
-Modify the AST to match the desired shape
+1. Dump and examine the AST
+2. Modify the AST to match the desired shape
+
 The example shown here describes how to create new class syntax in Nim, purely through a library.
 
 This is the code that we currently must write to use OOP in Nim:
-
+```nim
 type Animal = ref object of RootObj
   name: string
   age: int
@@ -19,8 +19,10 @@ method ageHumanYrs(self: Dog): int = self.age * 7
 
 type Cat = ref object of Animal
 method vocalize(self: Cat): string = "meow"
-All these typedefs and self: T parameters are repetitive, so it’d be good to write a macro to mask them. Something like this would be nice:
+```
 
+All these typedefs and `self: T` parameters are repetitive, so it’d be good to write a macro to mask them. Something like this would be nice:
+```nim
 class Animal of RootObj:
   var name: string
   var age: int
@@ -33,8 +35,10 @@ class Dog of Animal:
 
 class Cat of Animal:
   method vocalize: string = "meow"
-To get that nice notation, we can use a macro:
+```
 
+To get that nice notation, we can use a macro:
+```nim
 import macros
 
 macro class*(head, body: untyped): untyped =
@@ -533,6 +537,9 @@ echo r.age_human_yrs()
 # `$` is not dynamically dispatched--if `r`'s type was
 # Animal instead of Rabbit, 'animal:…' would be printed.
 echo r
+```
+
+```
 nim c -r oopmacro.nim
 woof
 70
@@ -541,3 +548,4 @@ meow
 meep
 3
 rabbit:Fluffy:3
+```

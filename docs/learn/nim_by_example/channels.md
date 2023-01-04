@@ -1,8 +1,8 @@
 Channels
-Nim provides channels, used to communicate between threads.
+Nim provides [channels](https://nim-lang.org/docs/channels_builtin.html), used to communicate between threads.
 
 Here is an example with plain threads.
-
+```nim
 import std/os # for sleep
 
 var
@@ -26,10 +26,12 @@ commChan.open()
 createThread(sender, sendMsg)
 createThread(recver, recvMsg)
 joinThreads(sender, recver)
+```
+
 Usually, channels are created as global variables. That means you must follow a certain procedure if you wish to manually allocate shared memory for channels.
 
 The same example, using the higher level spawn:
-
+```nim
 import threadpool, std/os
 
 var commChan: Channel[string]
@@ -46,22 +48,26 @@ commChan.open()
 spawn recvMsg()
 spawn sendMsg()
 sync()
+```
+
 Note that all messages are deep copied when sent.
 
 Channels can be used in a non-blocking way as follows:
-
+```nim
 while true:
   let tried = commChan.tryRecv()
   if tried.dataAvailable:
     echo tried.msg
+```
 When a channel is opened, it can be set with a max number of items:
-
+```nim
 # create a channel to transfer ints
 var chan Channel[int]
 # allow max of 10 items in channel
 chan.open(10)
+```
 The default is set to 0, which means unlimited queue size.
 
 When the channel size is limited, new sends will be blocked if there is not enough space. You can use the trySend function instead, which returns immediately with a bool representing success of the operation.
 
-See the documentation.
+See the [documentation](https://nim-lang.org/docs/channels_builtin.html).
