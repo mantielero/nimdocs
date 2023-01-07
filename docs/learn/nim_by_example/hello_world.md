@@ -1,19 +1,47 @@
-The code for a simple hello world program is as follows:
+Create the following file in your favorite text editor:
 ```nim title="helloworld.nim"
 echo "Hello World"
 ```
 
-Save this text as `helloworld.nim`. To compile and execute the program, the following command should be run:
+Compile it:
 ```sh
-nim c -r --verbosity:0 helloworld.nim
+nim c helloworld.nim
+```
+and execute it as any other binary:
+
+=== "Windows"
+    ```sh
+    C:> helloworld.exe
+    Hello World
+    ```
+
+=== "Linux"
+    ```sh
+    $ ./helloworld
+    Hello World
+    ```
+
+You can compile and execute it in one shot:
+```sh
+nim c -r helloworld.nim
+...
+...
+...
 Hello World
 ```
 
-The command has several elements:
+And you can avoid all the non essential messages by doing:
+```sh
+nim c -r --verbosity:0 helloworld.nim
+```
 
-- `c` is an alias for compile, which compiles the Nim sources into C and then invokes the C compiler on them
-- `-r` is an alias for `--run`, which runs the program
-- `--verbosity:0` makes the compiler only output essential messages, since by default it also outputs some debugging messages. From now on, we assume that `--verbosity:0` is set
-- `./helloworld.nim` is the path to the source you want to compile
+Visit [Nim Compiler User Guide](https://nim-lang.org/docs/nimc.html), to find out about what can be done with Nim's compiler.
 
-<iframe width=700, height=500 frameBorder=0 src="https://play.nim-lang.org/#ix=1Hwy"></iframe>
+
+???+ tip "Release mode"
+
+    Don't forget to compile using release mode when you intend to release the binary. This is required in order to achieve the expected performance:
+    ```
+    nim c -r -d:release helloworld.nim
+    ```
+        

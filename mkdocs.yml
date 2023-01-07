@@ -2,6 +2,9 @@ site_name: Nim docs
 
 theme:
   name: material
+  features:
+    - content.code.annotate
+
 #  highlightjs: true
 # https://github.com/narimiran/nim-basics
 nav:
@@ -13,15 +16,18 @@ nav:
       - Getting Started: learn/nim_by_example/getting_started.md
       - Hello world: learn/nim_by_example/hello_world.md
       - Comments: learn/nim_by_example/comments.md
-      - Variables: learn/nim_by_example/variables.md
-      - Result: learn/nim_by_example/result.md
-      - Type Casting and Inference: learn/nim_by_example/type_casting_inference.md
-      - If, else and while: learn/nim_by_example/if_else_while.md
-      - Case Statements: learn/nim_by_example/case.md
-      - For Loops & Iterators: learn/nim_by_example/for_loops_iterators.md
+      - Variables: learn/nim_by_example/variables.md     
       - Procs: learn/nim_by_example/procs.md
+      - Blocks: learn/nim_by_example/blocks.md       
+      # - Result: learn/nim_by_example/result.md
+      - Flow control:
+        - If - elif - else: learn/nim_by_example/if_elif_else.md
+        - While: learn/nim_by_example/while.md        
+        - Case Statements: learn/nim_by_example/case.md
+        - For Loops & Iterators: learn/nim_by_example/for_loops_iterators.md
+
+      - Type Casting and Inference: learn/nim_by_example/type_casting_inference.md
       - First class functions: learn/nim_by_example/first_class_functions.md
-      - Blocks: learn/nim_by_example/blocks.md
       - Primitive types: learn/nim_by_example/primitives.md
       - Type aliases: learn/nim_by_example/types.md
       - Object types: learn/nim_by_example/object_types.md
@@ -130,6 +136,12 @@ markdown_extensions:
 - tables
 - pymdownx.arithmatex:
     generic: true
+- pymdownx.tabbed:
+    alternate_style: true 
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
 
 extra_javascript:
   - javascripts/mathjax.js
