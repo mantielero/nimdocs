@@ -1,21 +1,28 @@
 
-Nim also supports case statements, which are like switches in other languages. There are several things to note here:
+This is sort of `if`-`elif`-`else` chained constructs. All possible cases are required to be covered:
 
-- You can use strings in the switch statement
-- Sets and ranges of ordinal types are also usable
-- case statements, like most things, are actually expressions
-- It is required that every possible case be covered
 
-```nim title="case_stmts.nim"
-case "charlie":
-  of "alfa":
-    echo "A"
-  of "bravo":
-    echo "B"
-  of "charlie":
-    echo "C"
+
+
+
+
+
+
+
+```nim
+let value = "3"
+case value:
+  of "0":
+    echo "Number: ", 0
+  of "1", "2":
+    echo "1-2"
+  of "3":
+    echo 3
   else:
-    echo "Unrecognized letter"
+    echo "value > 3"
+```
+
+<!--
 
 case 'h':
   of 'a', 'e', 'i', 'o', 'u':
@@ -45,3 +52,12 @@ C
 Consonant
 negative
 ```
+-->
+
+
+<!--
+
+- You can use strings in the switch statement
+- Sets and ranges of ordinal types are also usable
+- case statements, like most things, are actually expressions
+-->

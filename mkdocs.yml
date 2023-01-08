@@ -24,18 +24,23 @@ nav:
         - If - elif - else: learn/nim_by_example/if_elif_else.md
         - While: learn/nim_by_example/while.md        
         - Case Statements: learn/nim_by_example/case.md
-        - For Loops & Iterators: learn/nim_by_example/for_loops_iterators.md
+        - For loops: learn/nim_by_example/for_loops.md
+      
+      - Types:
+        - Primitive types: learn/nim_by_example/primitives.md
+        - Type aliases: learn/nim_by_example/type_aliases.md              
+        - Strings: learn/nim_by_example/strings.md        
+        - Enum types: learn/nim_by_example/enum_types.md
+        - Arrays: learn/nim_by_example/arrays.md
+        - Seqs: learn/nim_by_example/seqs.md
+        - Object types: learn/nim_by_example/object_types.md
+        - Distinct types: learn/nim_by_example/distinct_types.md          
 
+      - Iterators: learn/nim_by_example/iterators.md
       - Type Casting and Inference: learn/nim_by_example/type_casting_inference.md
       - First class functions: learn/nim_by_example/first_class_functions.md
-      - Primitive types: learn/nim_by_example/primitives.md
-      - Type aliases: learn/nim_by_example/types.md
-      - Object types: learn/nim_by_example/object_types.md
-      - Enum types: learn/nim_by_example/enum_types.md
-      - Distinct types: learn/nim_by_example/distinct_types.md
-      - Strings: learn/nim_by_example/strings.md
-      - Arrays: learn/nim_by_example/arrays.md
-      - Seqs: learn/nim_by_example/seqs.md
+
+
       - Bitsets: learn/nim_by_example/bitsets.md
       - Files: learn/nim_by_example/files.md
       - JSON: learn/nim_by_example/json.md

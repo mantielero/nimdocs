@@ -1,4 +1,3 @@
-
 Nim has first class iterators and syntax to use them, for loops. The continue and break keywords also work inside of for loops. There are two kinds of iterator, and two special methods that for loops work with.
 
 # items and pairs

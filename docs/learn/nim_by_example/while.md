@@ -33,9 +33,12 @@ block outer:
   while true:
     block inner:
         while true:
-            break outer
-        echo "inner"
-  echo "outer"
+            break inner
+            #break outer
+    echo "inner"
+    break outer
+
+echo "outer"
 ```
 <!--
 ```nim
