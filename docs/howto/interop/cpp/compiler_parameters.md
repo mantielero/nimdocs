@@ -23,13 +23,13 @@ The way in which the outcome of `pkgconfig` is used in `passL` is by means of [g
 
 The same applies to [passC](https://nim-lang.org/docs/manual.html#implementation-specific-pragmas-passc-pragma). So you could use:
 ```nim
-{passC: gorge("pkg-config --cflags openscenegraph")}
+{.passC: gorge("pkg-config --cflags openscenegraph").}
 ```
 
 So we can live with:
 ```nim
 {.passL: gorge("pkgconfig --libs openscenegraph").}
-{passC: gorge("pkg-config --cflags openscenegraph")}  # In this case will be empty
+{.passC: gorge("pkg-config --cflags openscenegraph").}  # In this case will be empty
 ```
 
 !!! TODO: windows case
