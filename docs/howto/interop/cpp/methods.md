@@ -1,7 +1,7 @@
 
 ### Wrapping some procs
 After that, we use some methods in C++:
-```c++
+```cpp
 vertices->push_back(osg::Vec3(0, 0, 0));
 ```
 
@@ -16,7 +16,9 @@ type
 proc newVec3*(x,y,z:cdouble): Vec3Obj {.
     importcpp: "osg::Vec3(@)", header: "<osg/Array>", constructor.}
 ```
+
 Nothing to comment about `Vec3Obj` type, but a couple of things about the `newVec3` constructor:
+
 - `osg::Vec3(@)`: here `@` means all the parameters of the `newVec3` proc. So '`@` will be replaced with `x`, `y`, `z`.
 - `constructor`:
 - Also note: [cdouble](https://nim-lang.org/docs/system.html#cdouble)
