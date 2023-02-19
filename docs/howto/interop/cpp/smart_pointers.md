@@ -35,6 +35,7 @@ type
             header: "<osg/Geometry>", bycopy.} = object
 ```
 where:
+
 - `GeometryObj` will be the equivalent type in Nim
 - we can see that we simply refer to the equivalent C++ code: `osg::Geometry`.
 - we refer to the header file where that type is defined: `<osg/Geometry>`.
@@ -54,6 +55,7 @@ So the equivalent to C++'s:
 ```c++
 osg::ref_ptr<osg::Geometry> myTriangleGeometry =
 ```
+
 in Nim will be:
 ```nim
 var myTriangleGeometry:GeometryRef =
