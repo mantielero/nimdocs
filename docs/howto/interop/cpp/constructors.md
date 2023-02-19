@@ -21,4 +21,5 @@ will be in Nim:
 var myTriangleGeometry:GeometryRef = newGeometryRef()
 ```
 
-!!! TODO: cnew, constructor
+!!! bug
+    cnew, constructor
