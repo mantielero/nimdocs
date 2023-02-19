@@ -39,7 +39,9 @@ proc pushBack*(arr:Vec3ArrayRef; v:Vec3Obj)  {.cdecl,
 Here we are using the parameters with types `Vec3ArrayRef` and `Vec3Obj`. It is worth noting:
 
 - `importcpp: "#->push_back(#)"`: where `#` represents the parameters in order; so the first `#` appearance represent the first parameter in the proc (`arr:Vec3ArrayRef`) and the second `#` represent the second parameter in the proc (`v:Vec3Obj`).
-> Note: we could use `@` representing the remaining parameters in the proc when we have used `#` before. So above's would be equivalent to :  `importcpp: "#->push_back(@)"`, but `@` would represent the second, third, ... or whatever remaining proc parameters.
+  !!! note
+      We could use `@` representing the remaining parameters in the proc when we have used `#` before. So above's would be equivalent to :  `importcpp: "#->push_back(@)"`, but `@` would represent the second, third, ... or whatever remaining proc parameters.
+      
 - `->`: also note that here we are using `->` insted of a `.` to call the method. This is plain C++ code. In C++, the dot operator is applied to the actual object while the arrow operator is used with a pointer to an object (which is our case now).
 
 We would use the wrapped method as follows:
