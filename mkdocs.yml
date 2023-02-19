@@ -54,6 +54,16 @@ nav:
 
   - How-to:
     - Index: howto/index.md
+    - Interop:
+      - Cpp:
+        - Introduction: howto/interop/cpp/intro.md
+        - Where to start?: howto/interop/cpp/where_to_start.md
+        - Compiler parameters: howto/interop/cpp/compiler_parameters.md
+        - Types - smart pointers: howto/interop/cpp/smart_pointers.md
+        - Constructors: howto/interop/cpp/constructors.md
+        - Nothing new: howto/interop/cpp/nothing_new1.md
+        - Methods: howto/interop/cpp/methods.md
+        - Nothing new: howto/interop/cpp/nothing_new2.md
 
   - Reference:
     - Authors: manual/author.md
