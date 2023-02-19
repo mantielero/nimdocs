@@ -25,8 +25,11 @@ Nothing to comment about `Vec3Obj` type, but a couple of things about the `newVe
 
 [more about constructors](https://nim-lang.org/docs/manual.html#importcpp-pragma-wrapping-constructors)
 
-> TIP: I suggest compiling the nim code with `--nimcache:myfolder`. This way, you can inspect the generated `.cpp` files and see if what is being generated looks like it should. So execute:
-> `nim cpp --nimcache:myfolder ex01.nim`
+!!! tip
+    I suggest compiling the nim code with `--nimcache:myfolder`. This way, you can inspect the generated `.cpp` files and see if what is being generated looks like it should. So execute:
+    ```sh
+    nim cpp --nimcache:myfolder ex01.nim
+    ```
 
 After that, we can wrap the method `push_back`:
 ```nim
