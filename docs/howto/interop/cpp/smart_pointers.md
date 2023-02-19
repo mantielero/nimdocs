@@ -20,11 +20,13 @@ type
   RefPtr*[T] {.header: "<osg/Referenced>", importcpp: "osg::ref_ptr<\'0>".} = object
 ```
 where:
+
 - `RefPtr*[T]` will be the type used in Nim (which is a [generic](https://nim-lang.org/docs/tut2.html#generics)).
 - `header: "<osg/Referenced>"`: the [header pragma](https://nim-lang.org/docs/manual.html#implementation-specific-pragmas-header-pragma) indicates the name of the header file being wrapped. This will add `#include <osg/Referenced>` in the generated code.
 - `importcpp: "osg::ref_ptr<\'0>"`: here we are using the [importcpp pragma](https://nim-lang.org/docs/manual.html#implementation-specific-pragmas-importcpp-pragma). In this case, basically states the it will generate the code `osg::ref_ptr<.....>`  and the `\'0` refers to the content of the first type parameter of the generic (in this case, it refers to the `T`).
 
-> If we were wrapping a template with two types, for example: `xxx::yyy<ppp,qqq>`, the signature would be something like: `Yyy*[P,Q] {. importcpp:"xxx::yyy<\'0,\'1>".}`.
+!!! note
+    If we were wrapping a template with two types, for example: `xxx::yyy<ppp,qqq>`, the signature would be something like: `Yyy*[P,Q] {. importcpp:"xxx::yyy<\'0,\'1>".}`.
 
 Then, we need to wrap the `osg::Geometry` type. You can do so by means of:
 ```
